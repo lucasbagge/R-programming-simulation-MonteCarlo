@@ -86,7 +86,7 @@ rep(c("a", "b", "c"), 2)
 # these are valid indices for x.
 
 # A few examples to illustrate extracting elements from a vector are:
-  
+
 x = letters[1:8] # letters of the alphabet a to h
 x
 
@@ -338,7 +338,7 @@ sweep(A, 2, colMeans(A))
 # of soldiers in 10 calvary corps recording fatalities
 # due to horsekicks over a 20 year period. The 200 
 # values are summarized in the table below:
-  
+
 #                   CORPS-YEARS IN WHICH
 # NUMBER DEATHS (k)   k DEATHS OCCURRED
 #                0                  109
@@ -388,7 +388,7 @@ f <- dpois(k, r)
 f
 
 How well does the Poisson model fit the horsekick data? 
-In a sample of size 200, the expected counts are 200f(k). 
+  In a sample of size 200, the expected counts are 200f(k). 
 Truncating the fraction using floor() we have
 
 floor(200*f) # expected counts
@@ -429,6 +429,8 @@ print(cbind(k, p, f))
 
 # And call it as a batch file:
 source("C:/Rx/horsekicks.R")
+source("/Users/lucasbagge/Documents/GitHub/R-programming-simulation-MonteCarlo/Sektion_1/Section-1-Materials-Vectors-Matrices-List-And-Functions/scripts/horsekicks.R ")
+
 
 # OK, now let's extend this example of Horsekicks.....
 
@@ -485,14 +487,14 @@ str(mylist)
 # the counts for each of the bins. The histogram has an interesting shape.
 
 H <- hist(faithful$waiting)
-
+# Hvis vi clear plot og trykker strH så kan vi se elementerne i listen. 
 # Is not normal, appears bimodal.
 
 # Usually only want to see the graphical output of hist().
 # But note other info stored in returned object H
 
 str(H)
-
+rm(H)
 # Object H is a list
 
 names(H)
@@ -533,3 +535,75 @@ USArrests[samplerows, ]
 # alternatively:
 
 USArrests[sample(rownames(USArrests), size=5, replace=FALSE), ]
+
+
+# Day-1-exercises.pdf
+
+## 1) 
+
+x <- 123
+a <- 1.1
+b <- 1.2
+
+### a)
+
+z <- x^(a)^(b)
+z <- x**a**b
+
+### b)
+z <- (x^(a))^(b)
+
+## 2)
+
+### a)
+
+c(1:8,7:1)
+
+### b)
+rep(1:5, times=1:5)
+
+### c)
+X = matrix(0:1, 3, 3)
+X
+
+
+### d)
+X = matrix(0:7, 3, 3)
+X
+
+## 3) Use R to produce a vector containing all integers from 1 to 100 that are not divisible by 2, 3, or 7.
+x <- 1:100
+x
+
+idx <- (x %% 2 != 0) & (x %% 3 != 0) & (x %% 7 != 0)
+
+x[idx]
+
+## 4) 
+
+qe <- c("S", "R", "A", "L")
+
+### a)
+
+qe <- c(qe, "B")
+qe
+
+### b)
+qe <- qe[-1]
+qe
+
+### c)
+qe <- c("P", qe)
+qe
+
+### d)
+qe <- qe[-5]
+qe
+
+### e)
+qe <- qe[qe!="A"]
+qe
+
+### f)
+qe2 <- which(qe == "R")
+qe2
