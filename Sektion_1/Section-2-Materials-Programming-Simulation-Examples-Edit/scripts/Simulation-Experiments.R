@@ -91,12 +91,12 @@ for(j in 1:4){
 # function more general, we define n to be the number of 
 # tosses and let the default value of n be 50.
 
-peter.paul=function(n=50){
+peter.paul=function(n = 50){
   win = sample(c(-1, 1), size=n, replace=TRUE)
   sum(win)
 }
 
-peter.paul()
+peter.paul(10)
 
 # In this game, Peter finished with a fortune of ?? dollars. 
 # To repeat this for 1000 games, we use the replicate function 
